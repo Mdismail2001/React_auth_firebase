@@ -2,12 +2,20 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Login = () => {
+
+    const handleForm =(e)=>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password)
+    }
+
     return (
         <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
-                <form className="fieldset">
+                <form onSubmit={handleForm} className="fieldset">
                 <label className="label">Name</label>
                 <input type="name" className="input" name='name' placeholder="Name" />
 

@@ -1,7 +1,13 @@
-import React, { use } from 'react';
+import React, { use }  from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../context/AuthContext';
+// import { AuthContext } from '../../context/AuthContext';
 
 const Header = () => {
+
+     const userInfo = use(AuthContext);
+    // const userInfo = use(AuthContext);
+    // console.log(userInfo);
 
     const links =<>
     <li><NavLink to='/'>Home</NavLink></li>
