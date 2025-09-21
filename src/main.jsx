@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { createContext, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -10,8 +10,9 @@ import Root from './layouts/Root.jsx';
 import Home from './components/home/Home.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
+// create context for pass value
 
-const router = createBrowserRouter([
+ const router = createBrowserRouter([
   {
     path: "/",
     Component:Root,
@@ -23,10 +24,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
   </StrictMode>,
 )

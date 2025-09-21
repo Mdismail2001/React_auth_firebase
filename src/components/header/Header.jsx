@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
 
 const Header = () => {
+
     const links =<>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/about' >About</NavLink></li>

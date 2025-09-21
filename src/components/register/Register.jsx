@@ -1,5 +1,7 @@
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
 import { Link } from 'react-router';
+import { auth } from '/src/firebase.init';
 
 const Register = () => {
     const handleForm =(e)=>{
@@ -7,8 +9,16 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-  
-        console.log(name, email, password)
+        console.log(name, email, password) // get user info from register form 
+        // register with firebase function
+        createUserWithEmailAndPassword(auth,email,password)
+        .then(result =>{
+            console.log(result);
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
+
 
     }
     return (
