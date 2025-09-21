@@ -13,6 +13,8 @@ import Register from './components/register/Register.jsx';
 import FirebaseAuthProvider from './context/FirebaseAuthProvider.jsx';
 import Orders from './components/orders/Orders.jsx';
 import PrivateRoute from './privateRoute/PrivateRoute.jsx';
+import Profile from './components/profile/Profile.jsx';
+import Dashboard from './components/dashboard/Dashboard.jsx';
 // create context for pass value
 
  const router = createBrowserRouter([
@@ -23,7 +25,9 @@ import PrivateRoute from './privateRoute/PrivateRoute.jsx';
       {index:true, Component:Home},
       {path:'login', Component:Login},
       {path:'register', Component:Register},
-      {path:'order', element:<PrivateRoute><Orders></Orders></PrivateRoute>}
+      {path:'order', element:<PrivateRoute><Orders></Orders></PrivateRoute>},
+      {path:'profile', element:<PrivateRoute><Profile></Profile></PrivateRoute> },
+      {path:'dashboard', element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute> },
     ]
   },
 ]);
