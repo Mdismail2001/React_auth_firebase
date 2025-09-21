@@ -11,6 +11,8 @@ import Home from './components/home/Home.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
 import FirebaseAuthProvider from './context/FirebaseAuthProvider.jsx';
+import Orders from './components/orders/Orders.jsx';
+import PrivateRoute from './privateRoute/PrivateRoute.jsx';
 // create context for pass value
 
  const router = createBrowserRouter([
@@ -19,8 +21,9 @@ import FirebaseAuthProvider from './context/FirebaseAuthProvider.jsx';
     Component:Root,
     children:[
       {index:true, Component:Home},
-      {path:'/login', Component:Login},
-      {path:'/register', Component:Register}
+      {path:'login', Component:Login},
+      {path:'register', Component:Register},
+      {path:'order', element:<PrivateRoute><Orders></Orders></PrivateRoute>}
     ]
   },
 ]);
