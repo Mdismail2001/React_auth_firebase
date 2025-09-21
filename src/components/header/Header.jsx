@@ -1,13 +1,13 @@
 import React, { use }  from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 // import { AuthContext } from '../../context/AuthContext';
 
 const Header = () => {
 
-     const userInfo = use(AuthContext);
+     const {user} = use(AuthContext);
     // const userInfo = use(AuthContext);
-    // console.log(userInfo);
+    console.log(user);
 
     const links =<>
     <li><NavLink to='/'>Home</NavLink></li>
@@ -43,7 +43,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+               { user?  <a className="btn">Sign Out</a> : <Link to='/login'>Login</Link>}
             </div>
             </div>
         </div>
